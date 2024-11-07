@@ -1,0 +1,121 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Student {
+  id: Int!
+  name: String!
+  email: String!
+  age: Int!
+  specialization: Specialization!
+  department: Department!
+  university: University!
+}
+
+type Specialization {
+  id: Int!
+  name: String!
+  department: Department!
+  students: [Student]!
+}
+
+type Department {
+  id: Int!
+  name: String!
+  university: University
+  specializations: [Specialization]
+  students: [Student]
+}
+
+type University {
+  id: Int!
+  name: String!
+  departments: [Department!]
+  students: [Student!]
+}
+
+type EntityCounts {
+  universities: Int!
+  departments: Int!
+  specializations: Int!
+  students: Int!
+}
+
+type StudentDistribution {
+  byUniversity: [StudentByUniversity!]!
+  byDepartment: [StudentByDepartment!]!
+  bySpecialization: [StudentBySpecialization!]!
+}
+
+type StudentByUniversity {
+  universityId: Int!
+  universityName: String!
+  studentCount: Int!
+}
+
+type StudentByDepartment {
+  departmentId: Int!
+  departmentName: String!
+  studentCount: Int!
+}
+
+type StudentBySpecialization {
+  specializationId: Int!
+  specializationName: String!
+  studentCount: Int!
+}
+
+type DepartmentWithUniversityCount {
+  departmentId: Int!
+  departmentName: String!
+  universityName: String!
+  studentCount: Int!
+}
+
+type SpecializationWithDeptAndUniversityCount {
+  specializationId: Int!
+  specializationName: String!
+  departmentName: String!
+  universityName: String!
+  studentCount: Int!
+}
+
+type Query {
+  universities: [University!]!
+  university(id: Int!): University!
+  departments(universityId: Int): [Department!]!
+  department(id: Int!): Department!
+  specializations: [Specialization!]!
+  specializationsByUniversity(universityId: Int!): [Specialization!]!
+  specializationsByDepartment(departmentId: Int!): [Specialization!]!
+  specialization(id: Int!): Specialization!
+  specializationWithStudents(id: Int!): [Specialization!]!
+  filteredSpecializations(universityId: Int, departmentId: Int): [Specialization!]!
+  students: [Student!]!
+  student(id: Int!): Student!
+  studentsByUniversity(universityId: Int!): [Student!]!
+  studentsByDepartmentAndUniversity(universityId: Int!, departmentId: Int!): [Student!]!
+  studentsBySpecializationDepartmentAndUniversity(universityId: Int!, departmentId: Int!, specializationId: Int!): [Student!]!
+  entityCounts: EntityCounts!
+  studentDistribution: StudentDistribution!
+  studentCountsByUniversity: [StudentByUniversity!]!
+  studentCountsByDepartment: [StudentByDepartment!]!
+  studentCountsByDepartmentWithUniversity: [DepartmentWithUniversityCount!]!
+  studentCountsBySpecialization: [StudentBySpecialization!]!
+  studentCountsBySpecializationWithDeptAndUniversity: [SpecializationWithDeptAndUniversityCount!]!
+}
+
+type Mutation {
+  createUniversity(name: String!): University!
+  updateUniversity(id: Int!, name: String!): University!
+  deleteUniversity(id: Int!): University
+  createDepartment(name: String!, universityId: Int!): Department!
+  editDepartment(id: Int!, name: String!): Department!
+  deleteDepartment(id: Int!): Boolean!
+  createSpecialization(name: String!, departmentId: Int!): Specialization!
+  deleteSpecialization(id: Int!): Boolean!
+  updateSpecialization(id: Int!, name: String!): Specialization
+  createStudent(name: String!, email: String!, age: Int!, specializationId: Int!, departmentId: Int!, universityId: Int!): Student!
+  deleteStudent(id: Int!): Boolean!
+  updateStudent(id: Int!, name: String!, email: String!, age: Int!, specializationId: Int!, departmentId: Int!, universityId: Int!): Student!
+}

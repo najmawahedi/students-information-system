@@ -1,0 +1,32 @@
+# Ignore dependencies (these will be installed fresh in the container)
+node_modules
+
+# Ignore the build output (generated within the container)
+dist
+
+# Ignore any log files
+npm-debug.log
+yarn-error.log
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+
+# Ignore Git and version control files
+.git
+.gitignore
+
+# Ignore environment configuration files (avoid including sensitive data)
+.env
+.env.local
+.env.*.local
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor config files
+.vscode
+.idea
+*.swp
+*.swo

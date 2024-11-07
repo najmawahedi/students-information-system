@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./my-nest-app
+    container_name: backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: najma
+      POSTGRES_DB: another
+    networks:
+      - app-network
+    volumes:
+      - ./my-nest-app:/app # Optional for local development
+      - /app/node_modules # Ignore node_modules from local directory
+
+  frontend:
+    build:
+      context: ./my-app
+    container_name: frontend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    volumes:
+      - ./my-app:/app # Optional for local development
+      - /app/node_modules # Ignore node_modules from local directory
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: najma
+      POSTGRES_DB: another
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:

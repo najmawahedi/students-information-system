@@ -1,0 +1,130 @@
+body {
+  background-color: #e4e4e6;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+table {
+  margin-left: 50px;
+}
+.student-page h2 {
+  font-size: 30px;
+  margin-top: 30px;
+  padding-top: 55px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.student-page label {
+  margin-left: 15px;
+}
+.student-page .selectStatments {
+  display: block;
+  margin: 0 auto;
+}
+.student-page select {
+  margin: 10px auto;
+  padding: 7px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.student-page thead {
+  background-color: #999292;
+}
+.student-page thead tr {
+  border-bottom: 1px solid gray;
+}
+
+.student-page tbody tr {
+  border-bottom: 1px solid gray;
+}
+
+.student-page td,
+.student-page th {
+  padding: 8px;
+  border-right: 1px solid gray;
+}
+
+.student-page td:last-child,
+.student-page th:last-child {
+  border-right: none;
+}
+
+.student-page button {
+  padding-right: 5px;
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.student-page button:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.student-page button:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.student-page button:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.student-page button:focus {
+  outline: 1px transparent;
+}
+
+.student-page button:before {
+  display: none;
+}
+
+.student-page button:-webkit-details-marker {
+  display: none;
+}
+
+.student-page #addstudent {
+  padding: 5px 30px;
+  display: block;
+  margin: 10px auto 1px;
+}
+
+.student-page .table {
+  display: block;
+  margin: 0 auto;
+}
+.student-page table {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 1250px;
+  text-align: left;
+  background-color: white;
+}

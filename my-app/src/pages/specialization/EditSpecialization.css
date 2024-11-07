@@ -1,0 +1,89 @@
+.editSstyle {
+  margin: 150px auto;
+  background-color: white;
+  width: 450px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 0 auto 10px;
+}
+
+.editSstyle label {
+  margin-right: 5px;
+  width: 80px;
+}
+.editSstyle input {
+  padding: 7px;
+  margin: 5px;
+  width: 250px;
+  box-sizing: border-box;
+  border: #76787a 1px solid;
+  border-radius: 5px;
+}
+.editSstyle button {
+  margin-top: 20px;
+  padding: 5px 10px;
+}
+
+.editSstyle button {
+  padding-right: 5px;
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+.editSstyle h2 {
+  padding-top: 20px;
+}
+.editSstyle button:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.editSstyle button:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.editSstyle button:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.editSstyle button:focus {
+  outline: 1px transparent;
+}
+
+.editSstyle button:before {
+  display: none;
+}
+
+.editSstyle button:-webkit-details-marker {
+  display: none;
+}
